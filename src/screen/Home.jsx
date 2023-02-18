@@ -1,6 +1,6 @@
 import React from "react";
 import { Text,View,TouchableOpacity, Image } from "react-native";
-import pessoaLogin from '../../assets/pessoaLogin.png'
+import pessoaLogin from '../../assets/image/pessoaLogin.png';
 
 export const Home =({navigation})=> {
     return (
