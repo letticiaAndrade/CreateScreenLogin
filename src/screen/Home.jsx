@@ -1,6 +1,7 @@
 import React from "react";
 import { Text,View,TouchableOpacity, Image } from "react-native";
 import pessoaLogin from '../../assets/image/pessoaLogin.png';
+import { Sign } from "./Sign";
 
 export const Home =({navigation})=> {
     return (
@@ -24,7 +25,7 @@ export const Home =({navigation})=> {
             <TouchableOpacity style={{borderWidth:1, padding:4, width:200, borderRadius:7, marginBottom:20, backgroundColor:'#90CAF9', borderColor:"#90CAF9"}} onPress={()=> navigation.navigate('Login')}>
             <Text style={{textAlign:'center', fontSize:16, color:'white'}}>LOGIN</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{borderWidth:2, padding:4, width:200, borderRadius:7, borderColor: '#90CAF9'}}>
+            <TouchableOpacity style={{borderWidth:2, padding:4, width:200, borderRadius:7, borderColor: '#90CAF9'}} onPress={()=> navigation.navigate(Sign)}>
           <Text style={{textAlign:'center', fontSize: 16}}>SIGNUP</Text>
         </TouchableOpacity>
         </View>
