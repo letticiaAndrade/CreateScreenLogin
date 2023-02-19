@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
+import { Sign } from "./Sign";
 
 export const Login= ({navigation})=> {
     return (
@@ -55,7 +56,7 @@ export const Login= ({navigation})=> {
            </View>
            <View style={{marginHorizontal:50, flexDirection:'row', marginTop: 12}}>
                     <Text style={{color:'#8b8d96', fontSize:14}}>Don't have an account?</Text>
-                    <TouchableOpacity onPress={()=>""} >
+                    <TouchableOpacity onPress={()=>navigation.navigate(Sign)} >
                         <Text style={{color:'blue', paddingLeft:10}} >Sign up</Text>
                     </TouchableOpacity>
                 </View>
