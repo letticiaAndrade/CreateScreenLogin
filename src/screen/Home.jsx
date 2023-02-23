@@ -1,11 +1,13 @@
 import React from "react";
-import { Text,View,TouchableOpacity, Image } from "react-native";
+import { Text,View,TouchableOpacity, Image, ScrollView } from "react-native";
 import pessoaLogin from '../../assets/image/pessoaLogin.png';
 import { Sign } from "./Sign";
 
 export const Home =({navigation})=> {
     return (
+
         <View style={{flex: 1}}>
+            
 
         <View style={{padding:30}}>
          <Text style={{fontSize:20, color:'black', fontWeight:'bold'}} >LogoMarca</Text>
@@ -29,6 +31,7 @@ export const Home =({navigation})=> {
           <Text style={{textAlign:'center', fontSize: 16}}>SIGNUP</Text>
         </TouchableOpacity>
         </View>
+        
         </View>
        
     )
