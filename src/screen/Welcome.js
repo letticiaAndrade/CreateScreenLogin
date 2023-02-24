@@ -13,10 +13,11 @@ import React, { useState, useRef, useEffect } from "react";
 import Pessoa from "../../assets/image/pessoa3.png";
 import Pessoa2 from "../../assets/image/pessoaLogin.png";
 import Pessoa3 from "../../assets/image/meditandoPessoa.png";
+import { Home } from ".././screen/Home";
 
 const sizeScreen = Dimensions.get("window").width;
 
-export const Welcome = () => {
+export const Welcome = ({ navigation }) => {
   const scrollRef = useRef();
   const [step, setStep] = useState(0);
 
@@ -29,16 +30,11 @@ export const Welcome = () => {
   }, [step]);
 
   return (
-    <ScrollView
-      scrollEnabled={false}
-      ref={scrollRef}
-      horizontal
-      pagingEnabled={true}
-     >
-      <StatusBar style="auto" />
-     
-      <View>
-        <View style={[style.content, { marginRight: 25 }]}>
+    <ScrollView horizontal ref={scrollRef}
+    pagingEnabled>
+
+      <View style={style.content}>
+        <View style={{ marginRight: 25 }}>
           <View style={{ alignItems: "center", marginTop: 180 }}>
             <Image
               source={Pessoa}
@@ -51,7 +47,7 @@ export const Welcome = () => {
               style={{
                 fontWeight: "bold",
                 fontSize: 35,
-                fontFamily: 'Montserrat_500Medium',
+                fontFamily: "Montserrat_500Medium",
               }}
             >
               Find ticket{"\n"}for your trip!
@@ -66,7 +62,7 @@ export const Welcome = () => {
               marginBottom: 50,
             }}
           >
-            <Text style={{ fontFamily: 'Montserrat_500Medium' }}>
+            <Text style={{ fontFamily: "Montserrat_500Medium" }}>
               Collection of the most beautiful places.{"\n"} experiences and
               unusual housings in {"\n"} the world.
             </Text>
@@ -77,7 +73,7 @@ export const Welcome = () => {
               <Text
                 style={{
                   fontSize: 18,
-                  fontFamily: 'Montserrat_500Medium',
+                  fontFamily: "Montserrat_500Medium",
                   textAlign: "center",
                   color: "white",
                 }}
@@ -87,13 +83,23 @@ export const Welcome = () => {
             </Pressable>
           </View>
         </View>
+      </View>
+
+      <View style={style.content}>
+        <View style={{ alignItems: "center", marginTop: 180 }}>
+          <Image
+            source={Pessoa3}
+            resizeMode="contain"
+            style={{ width: 250, height: 250 }}
+          />
+        </View>
 
         <View>
           <Text
             style={{
               fontWeight: "bold",
               fontSize: 35,
-              fontFamily: 'Montserrat_500Medium',
+              fontFamily: "Montserrat_500Medium",
             }}
           >
             Best fligh{"\n"}recommendations
@@ -101,7 +107,7 @@ export const Welcome = () => {
         </View>
 
         <View style={{ marginTop: 30 }}>
-          <Text style={{ fontFamily: 'Montserrat_500Medium' }}>
+          <Text style={{ fontFamily: "Montserrat_500Medium" }}>
             Now you can avoid untrusted companes.{"\n"}Ourspecialiss will show
             you the best{"\n"}variantes.
           </Text>
@@ -114,39 +120,17 @@ export const Welcome = () => {
                 fontSize: 18,
                 textAlign: "center",
                 color: "white",
-                fontFamily: 'Montserrat_500Medium',
+                fontFamily: "Montserrat_500Medium",
               }}
             >
               Skip
             </Text>
           </Pressable>
         </View>
+
+        
       </View>
-      <View style={style.content}>
-        <View style={{ alignItems: "center", marginTop: 180 }}>
-          <Image
-            source={Pessoa3}
-            resizeMode="contain"
-            style={{ width: 250, height: 250 }}
-          />
-        </View>
-      </View>
-      <View>
-        <Text
-          style={{
-            fontWeight: "bold",
-            fontSize: 35,
-            fontFamily: 'Montserrat_500Medium',
-          }}
-        >
-          Enjoy your trip.
-        </Text>
-      </View>
-      <View style={{ marginTop: 30 }}>
-        <Text style={{ fontFamily: 'Montserrat_500Medium' }}>
-          Experience the world's best adventures {"\n"}with travel quest
-        </Text>
-      </View>
+
       <View style={style.content}>
         <View style={{ alignItems: "center", marginTop: 180 }}>
           <Image
@@ -155,17 +139,34 @@ export const Welcome = () => {
             style={{ width: 250, height: 250 }}
           />
         </View>
+
+        <Text
+          style={{
+            fontWeight: "bold",
+            fontSize: 35,
+            fontFamily: "Montserrat_500Medium",
+          }}
+        >
+          Enjoy your trip.
+        </Text>
+
+        <View style={{ marginTop: 30 }}>
+          <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+            Experience the world's best adventures {"\n"}with travel quest
+          </Text>
+        </View>
+
         <View style={{ alignSelf: "flex-end", marginRight: 30, marginTop: 70 }}>
           <Pressable
             style={[style.button, { marginTop: 70 }]}
-            onPress={() => navigation.navegate(Home)}
+            onPress={() => navigation.navigate(Home)}
           >
             <Text
               style={{
                 fontSize: 18,
                 textAlign: "center",
                 color: "white",
-                fontFamily: 'Montserrat_500Medium',
+                fontFamily: "Montserrat_500Medium",
               }}
             >
               Get started
@@ -173,23 +174,22 @@ export const Welcome = () => {
           </Pressable>
         </View>
       </View>
+
     </ScrollView>
   );
 };
 
 const style = StyleSheet.create({
+  content: {
+    width: sizeScreen,
+  },
 
-  
-    content: {
-      width: sizeScreen,
-    },
-  
-    button: {
-      marginVertical: 15,
-      borderWidth: 1,
-      paddingVertical: 10,
-      paddingHorizontal: 30,
-      borderRadius: 25,
-      backgroundColor: "blue",
-    },
-  });
+  button: {
+    marginVertical: 15,
+    borderWidth: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderRadius: 25,
+    backgroundColor: "blue",
+  },
+});

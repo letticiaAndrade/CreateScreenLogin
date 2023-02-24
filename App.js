@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Dimensions } from "react-native";
+import { SafeAreaView, StyleSheet, Dimensions, StatusBar } from "react-native";
 import { Routes } from "./src/routes";
 
 import {
@@ -20,6 +20,7 @@ export default function App() {
   return (
     <SafeAreaView style={style.container}>
       <Routes />
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
