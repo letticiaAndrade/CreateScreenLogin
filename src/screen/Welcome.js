@@ -69,7 +69,7 @@ export const Welcome = ({ navigation }) => {
                 marginBottom: 50,
               }}
             >
-              <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+              <Text style={{ fontFamily: "Montserrat_500Medium", color: '#8b8d96' }}>
                 Collection of the most beautiful places.{"\n"} experiences and
                 unusual housings in {"\n"} the world.
               </Text>
@@ -126,7 +126,7 @@ export const Welcome = ({ navigation }) => {
           </View>
 
           <View style={{ marginTop: 30, alignItems: "center" }}>
-            <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+            <Text style={{ fontFamily: "Montserrat_500Medium", color:'#8b8d96' }}>
               Now you can avoid untrusted companes.{"\n"}Ourspecialiss will show
               you the best{"\n"}variantes.
             </Text>
@@ -183,7 +183,7 @@ export const Welcome = ({ navigation }) => {
           </Text>
 
           <View style={{ marginTop: 30, alignItems: "center" }}>
-            <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+            <Text style={{ fontFamily: "Montserrat_500Medium", color: '#8b8d96' }}>
               Experience the world's best adventures {"\n"}with travel quest
             </Text>
           </View>
