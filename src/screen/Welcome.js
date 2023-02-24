@@ -33,17 +33,88 @@ export const Welcome = ({ navigation }) => {
   }, [step]);
 
   return (
-    <ScrollView horizontal ref={scrollRef} pagingEnabled scrollEnabled={false} style={{backgroundColor:'white'}}>
-      <View style={style.content} ref={step1}>
-        <View style={{ marginRight: 25 }}>
-          <View style={{ alignItems: "center", marginTop: 180 }}>
+    <>
+      <ScrollView
+        horizontal
+        ref={scrollRef}
+        pagingEnabled
+        scrollEnabled={false}
+        style={{ backgroundColor: "white" }}
+      >
+        <View style={style.content} ref={step1}>
+          <View style={{ marginRight: 25 }}>
+            <View style={{ alignItems: "center", marginTop: 180 }}>
+              <Image
+                source={Pessoa}
+                resizeMode="contain"
+                style={{ width: 250, height: 250 }}
+              />
+            </View>
+            <View style={{ marginVertical: 10, marginLeft: 50 }}>
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 35,
+                  fontFamily: "Montserrat_500Medium",
+                }}
+              >
+                Find ticket{"\n"}for your trip!
+              </Text>
+            </View>
+
+            <View
+              style={{
+                alignItems: "baseline",
+                marginLeft: 50,
+                marginTop: 30,
+                marginBottom: 50,
+              }}
+            >
+              <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+                Collection of the most beautiful places.{"\n"} experiences and
+                unusual housings in {"\n"} the world.
+              </Text>
+            </View>
+
+            <View style={{ alignSelf: "flex-end", marginRight: 30 }}>
+              <Pressable style={style.button} onPress={() => setStep(1)}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontFamily: "Montserrat_500Medium",
+                    textAlign: "center",
+                    color: "white",
+                  }}
+                >
+                  Skip
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+
+        <View style={style.content}>
+          <View style={{ padding: 25, height: 100, width: 120 }}>
+            <Ionicons.Button
+              name="arrow-back"
+              size={30}
+              color={"black"}
+              backgroundColor="white"
+              onPress={() => setStep((prev) => prev - 1)}
+              activeOpacity={1}
+              iconStyle={{ width: 30, height: 30 }}
+            ></Ionicons.Button>
+          </View>
+
+          <View style={{ alignItems: "center", marginTop: 50 }}>
             <Image
-              source={Pessoa}
+              source={Pessoa3}
               resizeMode="contain"
               style={{ width: 250, height: 250 }}
             />
           </View>
-          <View style={{ marginVertical: 10, marginLeft: 50 }}>
+
+          <View style={{ alignItems: "center" }}>
             <Text
               style={{
                 fontWeight: "bold",
@@ -51,32 +122,27 @@ export const Welcome = ({ navigation }) => {
                 fontFamily: "Montserrat_500Medium",
               }}
             >
-              Find ticket{"\n"}for your trip!
+              Best fligh{"\n"}recommendations
+            </Text>
+          </View>
+
+          <View style={{ marginTop: 30, alignItems: "center" }}>
+            <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+              Now you can avoid untrusted companes.{"\n"}Ourspecialiss will show
+              you the best{"\n"}variantes.
             </Text>
           </View>
 
           <View
-            style={{
-              alignItems: "baseline",
-              marginLeft: 50,
-              marginTop: 30,
-              marginBottom: 50,
-            }}
+            style={{ alignSelf: "flex-end", marginRight: 30, marginTop: 70 }}
           >
-            <Text style={{ fontFamily: "Montserrat_500Medium" }}>
-              Collection of the most beautiful places.{"\n"} experiences and
-              unusual housings in {"\n"} the world.
-            </Text>
-          </View>
-
-          <View style={{ alignSelf: "flex-end", marginRight: 30 }}>
-            <Pressable style={style.button} onPress={() => setStep(1)}>
+            <Pressable style={style.button} onPress={() => setStep(2)}>
               <Text
                 style={{
                   fontSize: 18,
-                  fontFamily: "Montserrat_500Medium",
                   textAlign: "center",
                   color: "white",
+                  fontFamily: "Montserrat_500Medium",
                 }}
               >
                 Skip
@@ -84,128 +150,87 @@ export const Welcome = ({ navigation }) => {
             </Pressable>
           </View>
         </View>
-      </View>
 
-      <View style={style.content}>
-        <View style={{ padding: 25, height: 100, width: 120 }}>
-          <Ionicons.Button
-            name="arrow-back"
-            size={30}
-            color={"black"}
-            backgroundColor="white"
-            onPress={() => setStep((prev) => prev - 1)}
-            activeOpacity={1}
-            iconStyle={{ width: 30, height: 30 }}
-          ></Ionicons.Button>
-        </View>
+        <View style={style.content}>
+          <View style={{ padding: 25, height: 100, width: 120 }}>
+            <Ionicons.Button
+              name="arrow-back"
+              size={30}
+              color={"black"}
+              backgroundColor="white"
+              onPress={() => setStep((prev) => prev - 1)}
+              activeOpacity={1}
+              iconStyle={{ width: 30, height: 30 }}
+            ></Ionicons.Button>
+          </View>
 
-        <View style={{ alignItems: "center", marginTop: 50 }}>
-          <Image
-            source={Pessoa3}
-            resizeMode="contain"
-            style={{ width: 250, height: 250 }}
-          />
-        </View>
+          <View style={{ alignItems: "center", marginTop: 60 }}>
+            <Image
+              source={Pessoa2}
+              resizeMode="contain"
+              style={{ width: 250, height: 250 }}
+            />
+          </View>
 
-        <View style={{alignItems:'center'}}>
           <Text
             style={{
               fontWeight: "bold",
               fontSize: 35,
               fontFamily: "Montserrat_500Medium",
+              paddingLeft: 60,
             }}
           >
-            Best fligh{"\n"}recommendations
+            Enjoy your trip.
           </Text>
-        </View>
 
-        <View style={{ marginTop: 30, alignItems:'center' }}>
-          <Text style={{ fontFamily: "Montserrat_500Medium" }}>
-            Now you can avoid untrusted companes.{"\n"}Ourspecialiss will show
-            you the best{"\n"}variantes.
-          </Text>
-        </View>
-
-        <View style={{ alignSelf: "flex-end", marginRight: 30, marginTop: 70 }}>
-          <Pressable style={style.button} onPress={() => setStep(2)}>
-            <Text
-              style={{
-                fontSize: 18,
-                textAlign: "center",
-                color: "white",
-                fontFamily: "Montserrat_500Medium",
-              }}
-            >
-              Skip
+          <View style={{ marginTop: 30, alignItems: "center" }}>
+            <Text style={{ fontFamily: "Montserrat_500Medium" }}>
+              Experience the world's best adventures {"\n"}with travel quest
             </Text>
-          </Pressable>
-        </View>
-      </View>
+          </View>
 
-      <View style={style.content}>
-        <View style={{ padding: 25, height: 100, width: 120 }}>
-          <Ionicons.Button
-            name="arrow-back"
-            size={30}
-            color={"black"}
-            backgroundColor="white"
-            onPress={() => setStep((prev) => prev - 1)}
-            activeOpacity={1}
-            iconStyle={{ width: 30, height: 30 }}
-          ></Ionicons.Button>
-        </View>
-
-        <View style={{ alignItems: "center", marginTop: 60 }}>
-          <Image
-            source={Pessoa2}
-            resizeMode="contain"
-            style={{ width: 250, height: 250 }}
-          />
-        </View>
-
-        <Text
-          style={{
-            fontWeight: "bold",
-            fontSize: 35,
-            fontFamily: "Montserrat_500Medium",
-            paddingLeft: 60
-          }}
-        >
-          Enjoy your trip.
-        </Text>
-
-        <View style={{ marginTop: 30, alignItems:'center'}}>
-          <Text style={{ fontFamily: "Montserrat_500Medium" }}>
-            Experience the world's best adventures {"\n"}with travel quest
-          </Text>
-        </View>
-
-        <View style={{ alignSelf: "flex-end", marginRight: 30, marginTop: 70 }}>
-          <Pressable
-            style={[style.button, { marginTop: 70 }]}
-            onPress={() => navigation.navigate(Home)}
+          <View
+            style={{ alignSelf: "flex-end", marginRight: 30, marginTop: 70 }}
           >
-            <Text
-              style={{
-                fontSize: 18,
-                textAlign: "center",
-                color: "white",
-                fontFamily: "Montserrat_500Medium",
-              }}
+            <Pressable
+              style={[style.button, { marginTop: 70 }]}
+              onPress={() => navigation.navigate(Home)}
             >
-              Get started
-            </Text>
-          </Pressable>
+              <Text
+                style={{
+                  fontSize: 18,
+                  textAlign: "center",
+                  color: "white",
+                  fontFamily: "Montserrat_500Medium",
+                }}
+              >
+                Get started
+              </Text>
+            </Pressable>
+          </View>
         </View>
+      </ScrollView>
+      <View style={{ flexDirection: "row", position: "absolute", bottom: 55, left: 45 }}>
+        {["", "", ""].map((item, i) => (
+          <View
+            key={i}
+            style={{
+              backgroundColor: i === step ? "red" : "blue",
+              height: 20,
+              width: 20,
+              borderRadius: 30,
+              marginHorizontal: 5,
+            }}
+          />
+        ))}
       </View>
-    </ScrollView>
+    </>
   );
 };
 
 const style = StyleSheet.create({
   content: {
     width: sizeScreen,
-    
   },
 
   button: {
