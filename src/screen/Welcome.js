@@ -221,10 +221,10 @@ export const Welcome = ({ navigation }) => {
       >
         {["", "", ""].map((item, i) => (
           <View
+          // a key com função de 
             key={i}
             style={{
-              backgroundColor: i === step ? "blue" : "gray",
-
+              backgroundColor: i === step ? "#90CAF9" : "gray",
               height: 20,
               // condição para mudar os dimensões do progress button quando selecionado o step
               width: i === step ? 40 : 20,
@@ -245,10 +245,9 @@ const style = StyleSheet.create({
 
   button: {
     marginVertical: 15,
-    borderWidth: 1,
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 25,
-    backgroundColor: "blue",
+    backgroundColor: "#90CAF9",
   },
 });
