@@ -15,11 +15,14 @@ import Pessoa2 from "../../assets/image/pessoaLogin.png";
 import Pessoa3 from "../../assets/image/meditandoPessoa.png";
 import { Home } from ".././screen/Home";
 
+import { Ionicons } from "@expo/vector-icons";
+
 const sizeScreen = Dimensions.get("window").width;
 
 export const Welcome = ({ navigation }) => {
   const scrollRef = useRef();
   const [step, setStep] = useState(0);
+  const step1 = useRef();
 
   const nextStep = () => {
     scrollRef.current.scrollTo({ y: 0, x: step * sizeScreen, animated: true });
@@ -30,10 +33,8 @@ export const Welcome = ({ navigation }) => {
   }, [step]);
 
   return (
-    <ScrollView horizontal ref={scrollRef}
-    pagingEnabled>
-
-      <View style={style.content}>
+    <ScrollView horizontal ref={scrollRef} pagingEnabled scrollEnabled={false} style={{backgroundColor:'white'}}>
+      <View style={style.content} ref={step1}>
         <View style={{ marginRight: 25 }}>
           <View style={{ alignItems: "center", marginTop: 180 }}>
             <Image
@@ -86,7 +87,19 @@ export const Welcome = ({ navigation }) => {
       </View>
 
       <View style={style.content}>
-        <View style={{ alignItems: "center", marginTop: 180 }}>
+        <View style={{ padding: 25, height: 100, width: 120 }}>
+          <Ionicons.Button
+            name="arrow-back"
+            size={30}
+            color={"black"}
+            backgroundColor="white"
+            onPress={() => setStep((prev) => prev - 1)}
+            activeOpacity={1}
+            iconStyle={{ width: 30, height: 30 }}
+          ></Ionicons.Button>
+        </View>
+
+        <View style={{ alignItems: "center", marginTop: 50 }}>
           <Image
             source={Pessoa3}
             resizeMode="contain"
@@ -127,12 +140,22 @@ export const Welcome = ({ navigation }) => {
             </Text>
           </Pressable>
         </View>
-
-        
       </View>
 
       <View style={style.content}>
-        <View style={{ alignItems: "center", marginTop: 180 }}>
+        <View style={{ padding: 25, height: 100, width: 120 }}>
+          <Ionicons.Button
+            name="arrow-back"
+            size={30}
+            color={"black"}
+            backgroundColor="white"
+            onPress={() => setStep((prev) => prev - 1)}
+            activeOpacity={1}
+            iconStyle={{ width: 30, height: 30 }}
+          ></Ionicons.Button>
+        </View>
+
+        <View style={{ alignItems: "center", marginTop: 60 }}>
           <Image
             source={Pessoa2}
             resizeMode="contain"
@@ -174,7 +197,6 @@ export const Welcome = ({ navigation }) => {
           </Pressable>
         </View>
       </View>
-
     </ScrollView>
   );
 };
