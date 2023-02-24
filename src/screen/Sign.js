@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { Modal } from "react-native";
+import { AntDesign } from '@expo/vector-icons';
 
 export const Sign = ({ navigation }) => {
+
+  const [isOpen, setOpen] = useState(false)
   return (
+    <>
+    
+    
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View style={{ padding: 25, height: 100, width: 120 }}>
         <Ionicons.Button
@@ -50,7 +57,7 @@ export const Sign = ({ navigation }) => {
             borderRadius: 7,
             padding: 10,
           }}
-          onPress={() => ""}
+          onPress={() => setOpen(true)}
         >
           <Text style={{ fontSize: 20, color: "white" }}>SIGN UP</Text>
         </TouchableOpacity>
@@ -124,5 +131,23 @@ export const Sign = ({ navigation }) => {
         </TouchableOpacity>
       </View>
     </View>
+
+    <Modal visible={isOpen}>
+          <View style={{flex:1, backgroundColor: "#00000050", justifyContent:'center', alignItems:'center'}}>
+          <View style={{width:'90%',backgroundColor:'white', padding:10, borderRadius:8}}>
+            <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+              <View style={{widt:26}}/>
+              <Text>Modal</Text>
+              <AntDesign.Button onPress={()=>setOpen(false)} name="closecircleo" size={24} color="black" style={{backgroundColor:'white'}}/>
+            </View>
+            <Text>
+              hello
+            </Text>
+          </View>
+
+          </View>
+
+    </Modal>
+    </>
   );
 };
