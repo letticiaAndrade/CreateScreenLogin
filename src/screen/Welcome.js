@@ -42,7 +42,7 @@ export const Welcome = ({ navigation }) => {
       >
         <View style={style.content} >
           <View style={{ marginRight: 25 }}>
-            <View style={{ alignItems: "center", marginTop: 180 }}>
+            <View style={{ alignItems: "center", marginTop: 150 }}>
               <Image
                 source={Pessoa}
                 resizeMode="contain"
@@ -105,7 +105,7 @@ export const Welcome = ({ navigation }) => {
             ></Ionicons.Button>
           </View>
 
-          <View style={{ alignItems: "center", marginTop: 50 }}>
+          <View style={{ alignItems: "center", marginTop: 40 }}>
             <Image
               source={Pessoa3}
               resizeMode="contain"
