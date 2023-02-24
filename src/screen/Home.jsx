@@ -1,13 +1,26 @@
-import React from "react";
+import React, {useState}from "react";
 import { Text,View,TouchableOpacity, Image, ScrollView } from "react-native";
 import pessoaLogin from '../../assets/image/pessoaLogin.png';
 import { Sign } from "./Sign";
+import { Ionicons } from "@expo/vector-icons";
 
 export const Home =({navigation})=> {
+   
     return (
 
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: 'white'}}>
             
+            <View style={{ padding: 25, height: 100, width: 120 }}>
+          <Ionicons.Button
+            name="arrow-back"
+            size={30}
+            color={"black"}
+            backgroundColor="white"
+            onPress={() => navigation.goBack()}
+            activeOpacity={1}
+            iconStyle={{ width: 30, height: 30 }}
+          ></Ionicons.Button>
+        </View>
 
         <View style={{padding:30}}>
          <Text style={{fontSize:20, color:'black', fontWeight:'bold'}} >LogoMarca</Text>
