@@ -1,6 +1,5 @@
 import {
   ScrollView,
-  StatusBar,
   StyleSheet,
   Dimensions,
   View,
