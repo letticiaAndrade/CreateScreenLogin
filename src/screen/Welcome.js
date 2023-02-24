@@ -21,7 +21,7 @@ const sizeScreen = Dimensions.get("window").width;
 export const Welcome = ({ navigation }) => {
   const scrollRef = useRef();
   const [step, setStep] = useState(0);
-  const step1 = useRef();
+ 
 
   const nextStep = () => {
     scrollRef.current.scrollTo({ y: 0, x: step * sizeScreen, animated: true });
@@ -40,7 +40,7 @@ export const Welcome = ({ navigation }) => {
         scrollEnabled={false}
         style={{ backgroundColor: "white" }}
       >
-        <View style={style.content} ref={step1}>
+        <View style={style.content} >
           <View style={{ marginRight: 25 }}>
             <View style={{ alignItems: "center", marginTop: 180 }}>
               <Image
