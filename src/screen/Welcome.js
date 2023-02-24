@@ -107,7 +107,7 @@ export const Welcome = ({ navigation }) => {
           />
         </View>
 
-        <View>
+        <View style={{alignItems:'center'}}>
           <Text
             style={{
               fontWeight: "bold",
@@ -119,7 +119,7 @@ export const Welcome = ({ navigation }) => {
           </Text>
         </View>
 
-        <View style={{ marginTop: 30 }}>
+        <View style={{ marginTop: 30, alignItems:'center' }}>
           <Text style={{ fontFamily: "Montserrat_500Medium" }}>
             Now you can avoid untrusted companes.{"\n"}Ourspecialiss will show
             you the best{"\n"}variantes.
@@ -168,12 +168,13 @@ export const Welcome = ({ navigation }) => {
             fontWeight: "bold",
             fontSize: 35,
             fontFamily: "Montserrat_500Medium",
+            paddingLeft: 60
           }}
         >
           Enjoy your trip.
         </Text>
 
-        <View style={{ marginTop: 30 }}>
+        <View style={{ marginTop: 30, alignItems:'center'}}>
           <Text style={{ fontFamily: "Montserrat_500Medium" }}>
             Experience the world's best adventures {"\n"}with travel quest
           </Text>
@@ -204,6 +205,7 @@ export const Welcome = ({ navigation }) => {
 const style = StyleSheet.create({
   content: {
     width: sizeScreen,
+    
   },
 
   button: {
