@@ -215,9 +215,10 @@ export const Welcome = ({ navigation }) => {
           <View
             key={i}
             style={{
-              backgroundColor: i === step ? "red" : "blue",
+              backgroundColor: i === step ? "blue" : "gray",
               height: 20,
-              width: 20,
+              // condição para mudar os dimensões do progress button quando selecionado o step
+              width: i === step? 40: 20,
               borderRadius: 30,
               marginHorizontal: 5,
             }}
