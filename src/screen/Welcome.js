@@ -221,7 +221,7 @@ export const Welcome = ({ navigation }) => {
       >
         {["", "", ""].map((item, i) => (
           <View
-          // a key com função de 
+            // a key com função de de direcionar o qual step atual
             key={i}
             style={{
               backgroundColor: i === step ? "#90CAF9" : "gray",
