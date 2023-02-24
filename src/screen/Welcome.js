@@ -210,15 +210,24 @@ export const Welcome = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
-      <View style={{ flexDirection: "row", position: "absolute", bottom: 55, left: 45 }}>
+
+      <View
+        style={{
+          flexDirection: "row",
+          position: "absolute",
+          bottom: 55,
+          left: 45,
+        }}
+      >
         {["", "", ""].map((item, i) => (
           <View
             key={i}
             style={{
               backgroundColor: i === step ? "blue" : "gray",
+
               height: 20,
               // condição para mudar os dimensões do progress button quando selecionado o step
-              width: i === step? 40: 20,
+              width: i === step ? 40 : 20,
               borderRadius: 30,
               marginHorizontal: 5,
             }}
